@@ -63,8 +63,11 @@ export class ShowPatientComponent implements OnInit {
     this.service.getPatientList().subscribe(data => {
       this.loading = false;
       this.PatientList = data;
-      for (var i = 0; i < data.length;i++)
+      for (let i = 0; i < data.length;i++){
         data[i].cpf = data[i].cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
+        data[i].tel = data[i].tel.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3")
+        data[i].emergency_tel = data[i].emergency_tel.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3")
+      }
     })
   }
 

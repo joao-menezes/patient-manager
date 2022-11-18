@@ -29,34 +29,37 @@
           [(ngModel)]="selectedDate"></p-calendar>
       </label>
     </div>
-    <div class="one-column">
       <div class="two-colums">
-        <label for="weight">
-          Peso
-          <input id="weight" type="text" formControlName="weight" pInputText onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+        <label >
+          Tipo Sanguineo
+          <p-dropdown
+            [style]="{'width':'234px'}"
+            formControlName="blood_group"
+            appendTo="body"
+            [options]="bloodType"
+            [(ngModel)]="selectedBloodType"
+            optionLabel="code"></p-dropdown>
         </label>
-        <label>
-          Sexo
-          <p-radioButton formControlName="sex"  name="sex" label="Masculino" value="M" [(ngModel)]="selectedSex" ></p-radioButton>
-          <p-radioButton formControlName="sex" name="sex" label="Feminino" value="F" [(ngModel)]="selectedSex"></p-radioButton>
-        </label>
-      </div>
+
+          <label>
+            Sexo
+            <div class="two-colums" [style]="{'width':'234px'}">
+              <p-radioButton formControlName="sex"  name="sex" label="Masculino" value="M" [(ngModel)]="selectedSex" ></p-radioButton>
+              <p-radioButton formControlName="sex" name="sex" label="Feminino" value="F" [(ngModel)]="selectedSex"></p-radioButton>
+            </div>
+          </label>
+
     </div>
-    <div class="one-column">
+    <div class="two-colums">
+      <label for="weight">
+        Peso
+        <input id="weight" type="text" formControlName="weight" pInputText onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+      </label>
       <label for="height">
         Altura
-        <input id="height" type="text" formControlName="height" pInputText onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+        <p-inputMask type="text" mask="9.99" formControlName="height" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></p-inputMask>
       </label>
-      <label >
-        Tipo Sanguineo
-        <p-dropdown
-          [style]="{'width':'100%'}"
-          formControlName="blood_group"
-          appendTo="body"
-          [options]="bloodType"
-          [(ngModel)]="selectedBloodType"
-          optionLabel="code"></p-dropdown>
-      </label>
+
     </div>
     <div class="two-colums">
       <label >

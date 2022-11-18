@@ -36,8 +36,10 @@
         </label>
         <label>
           Sexo
-          <p-radioButton formControlName="sex"  name="sex" label="Masculino" value="M" [(ngModel)]="selectedSex" ></p-radioButton>
-          <p-radioButton formControlName="sex" name="sex" label="Feminino" value="F" [(ngModel)]="selectedSex"></p-radioButton>
+          <div class="two-colums" [style]="{'width':'234px'}">
+            <p-radioButton formControlName="sex"  name="sex" label="Masculino" value="M" [(ngModel)]="selectedSex" ></p-radioButton>
+            <p-radioButton formControlName="sex" name="sex" label="Feminino" value="F" [(ngModel)]="selectedSex"></p-radioButton>
+          </div>
         </label>
       </div>
     </div>
@@ -48,7 +50,7 @@
       </label>
       <label for="height">
        Altura
-        <input id="height" type="text" formControlName="height" pInputText onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+        <p-inputMask type="text" mask="9.99" formControlName="height" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></p-inputMask>
       </label>
     </div>
      <label style="width: '100%'">

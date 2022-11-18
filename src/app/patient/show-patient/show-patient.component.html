@@ -62,12 +62,12 @@
               <td>{{patient.first_name}} {{patient.last_name}}</td>
               <td>{{patient.cpf}}</td>
               <td class="email">{{patient.email}}</td>
-              <td>{{patient.birth_date.substring(0, 10).replaceAll('-','/')}}</td>
+              <td>{{patient.birth_date.substring(0, 10).split('-').reverse().join('/')}}</td>
               <td>
                 Sexo <strong>{{patient.sex === 'M' ? 'Masculino' : 'Feminino'}}</strong>
                 <br>Tipo Sanguinêo <strong>{{patient.blood_group}}</strong>
                 <br>Peso <strong>{{patient.weight}}.0 Kg</strong>
-                <br> Altura <strong>{{patient.height}}.0 M</strong>
+                <br> Altura <strong>{{patient.height}} M</strong>
               </td>
               <td>{{patient.tel}} <br> <strong style="color:tomato">EMERGÊNCIA</strong><br>{{patient.emergency_tel}}</td>
               <td >

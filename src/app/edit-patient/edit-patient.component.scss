@@ -12,6 +12,11 @@ label{
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  .sex{
+    display: flex;
+    width:50%;
+  }
+
 }
 
 .margin-bottom{
