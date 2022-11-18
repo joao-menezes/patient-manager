@@ -92,8 +92,9 @@ export class EditPatientComponent implements OnInit {
 
     try {
       this.service.updatePatientsList(this.patientFields.value,this.patient.cpf).subscribe(res => {
-        this.showSuccess()
-        this.refreshPatientList()
+        this.showSuccess();
+        this.refreshPatientList();
+        this.display.emit(false);
         this.patientFields.reset();
       })
     }catch (err) {

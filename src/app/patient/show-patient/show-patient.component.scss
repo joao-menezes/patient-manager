@@ -1,21 +1,29 @@
 .container{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+  padding: 30px;
+  width: 100vw;
   .main-color{
     background-color:var(--teal-300) !important;
     border:1px solid var(--teal-100);
   }
+  .table-header{
+    height:60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
   .patients-table{
-    width: 100vw;
-    text-align: right;
-    transform: scale(0.9);
-    .email{
-      text-overflow: ellipsis;
+    box-shadow: 0px 0px 12px rgb(0 0 0 / 16%);
+    tr{transition:.25s}
+    tr:hover{
+      background-color: rgba(40, 167, 69, 0.37)
     }
+
     th,td{
       word-wrap:break-word;
     }
+
     .emptymessage{
       display: flex;
       justify-content: center;
@@ -55,31 +63,26 @@
 
 }
 
-:host ::ng-deep {
+::ng-deep {
   .p-datatable-responsive-demo .p-datatable-tbody > tr > td .p-column-title {
       display: none;
+  }
+
+  .p-datatable .p-datatable-loading-overlay {
+    display: none !important;
   }
 }
 
 @media screen and (max-width: 40rem) {
+  //.patients-table{
+  //  width: 100vw !important;
+  //  .margin{
+  //    margin-bottom: 0px !important;
+  //    margin-left: 10px;
+  //  }
+  //}
 
-  .patients-table{
-    width: 100vw !important;
-
-    .action-buttons{
-      align-content: flex-start !important;
-      flex-direction: row-reverse !important;
-      align-items: center !important;
-      border-bottom:1px solid var(--gray-500) !important;
-    }
-
-
-    .margin{
-      margin-bottom: 0px !important;
-      margin-left: 10px;
-    }
-  }
-  :host ::ng-deep {
+::ng-deep {
       .p-datatable {
           &.p-datatable-responsive-demo {
               .p-datatable-thead > tr > th,

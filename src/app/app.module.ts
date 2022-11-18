@@ -30,6 +30,7 @@ import {DropdownModule} from "primeng/dropdown";
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import {TooltipModule} from "primeng/tooltip";
 import {RippleModule} from "primeng/ripple";
+import {ProgressSpinnerModule} from "primeng/progressspinner";
 
 @NgModule({
   declarations: [
@@ -43,28 +44,29 @@ import {RippleModule} from "primeng/ripple";
     HomeComponent,
     EditPatientComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MenubarModule,
-    TableModule,
-    ButtonModule,
-    DialogModule,
-    CardModule,
-    InputMaskModule,
-    InputTextModule,
-    CalendarModule,
-    ToastModule,
-    AccordionModule,
-    RadioButtonModule,
-    DropdownModule,
-    TooltipModule,
-    RippleModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MenubarModule,
+        TableModule,
+        ButtonModule,
+        DialogModule,
+        CardModule,
+        InputMaskModule,
+        InputTextModule,
+        CalendarModule,
+        ToastModule,
+        AccordionModule,
+        RadioButtonModule,
+        DropdownModule,
+        TooltipModule,
+        RippleModule,
+        ProgressSpinnerModule
+    ],
   providers: [SharedService],
   bootstrap: [AppComponent]
 })

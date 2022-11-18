@@ -11,7 +11,7 @@ export class SharedService{
   constructor(private http:HttpClient){}
 
   getPatientList():Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl + '/patients/')
+    return this.http.get<any[]>(this.APIUrl + '/patients/?skip=0&limit=50')
   }
 
   addPatientsList(val:any){

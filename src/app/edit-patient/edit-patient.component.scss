@@ -12,6 +12,10 @@ label{
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  .sex{
+    display: flex;
+    width:50%;
+  }
 }
 
 .margin-bottom{
@@ -43,4 +47,8 @@ label{
   p-button{
     margin-left: 10px;
   }
+}
+
+::ng-deep p-calendar{
+  width: 234px;
 }

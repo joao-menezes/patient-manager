@@ -14,14 +14,12 @@ label{
   justify-content: center;
 }
 
-.margin-bottom{
-  margin-bottom:15px;
+.tree-columns{
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  align-content: center;
+  justify-content: center;
 }
 
 .form-group{
@@ -29,6 +27,10 @@ label{
   padding: 5px;
   flex-wrap: wrap;
   flex-direction: column;
+
+  .final-input{
+    width: 100%;
+  }
 
   .one-column{
     width: 100%;
@@ -43,4 +45,8 @@ label{
   p-button{
     margin-left: 10px;
   }
+}
+
+::ng-deep body p-calendar{
+  width: 234px;
 }

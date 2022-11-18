@@ -8,3 +8,25 @@ a{
     color: var(--surface-900);
   }
 }
+
+
+
+::ng-deep p-menubarsub{
+  .p-menuitem{
+    border-radius:30px;
+    transition:.2s;
+    margin-right:15px;
+  }
+  .p-menuitem:hover{
+    background-color: #28a745 !important;
+  }
+  .p-menuitem:hover .p-menuitem-text{
+    color: #fff !important;
+  }
+}
+
+::ng-deep p-menubar{
+  .p-menuitem-link:focus {
+    box-shadow:none !important;
+  }
+}
