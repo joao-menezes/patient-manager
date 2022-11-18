@@ -33,7 +33,7 @@
       <div class="two-colums">
         <label for="weight">
           Peso
-          <input id="weight" type="text" formControlName="weight" pInputText />
+          <input id="weight" type="text" formControlName="weight" pInputText onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
         </label>
         <label>
           Sexo
@@ -45,7 +45,7 @@
     <div class="one-column">
       <label for="height">
         Altura
-        <input id="height" type="text" formControlName="height" pInputText />
+        <input id="height" type="text" formControlName="height" pInputText onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
       </label>
       <label >
         Tipo Sanguineo

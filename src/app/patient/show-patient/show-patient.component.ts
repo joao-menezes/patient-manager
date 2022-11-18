@@ -1,5 +1,6 @@
 import {Component, Injectable, Input, OnInit} from '@angular/core';
 import {SharedService} from "../../shared.service";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-show-patient',
@@ -9,7 +10,7 @@ import {SharedService} from "../../shared.service";
 
 export class ShowPatientComponent implements OnInit {
 
-  constructor(private service:SharedService) { }
+  constructor(private service:SharedService, private messageService: MessageService) { }
 
   displayAdd: boolean = false;
   displayEdit: boolean = false;
@@ -42,12 +43,22 @@ export class ShowPatientComponent implements OnInit {
     try {
         this.service.deletePatientList(del).subscribe(data => {
           this.refreshPatientList();
+          this.showSuccess();
         })
 
     }catch(err){
-      console.log(err)
+      this.showError();
     }
   }
+
+  showSuccess() {
+    this.messageService.add({severity:'success', summary: 'Success', detail: 'Deletado com sucesso'});
+  }
+
+  showError() {
+    this.messageService.add({severity:'error', summary: 'error', detail: 'Erro ao Deletar'});
+  }
+
   refreshPatientList(){
     this.service.getPatientList().subscribe(data => {
       this.loading = false;

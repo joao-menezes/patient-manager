@@ -14,8 +14,7 @@
     <div class="two-colums">
       <label for="cpf">
         Cpf
-<!--        <p-inputMask formControlName="cpf" type="text" id="cpf" mask="999.999.999-99" ></p-inputMask>-->
-        <input formControlName="cpf" type="email" pInputText >
+        <p-inputMask formControlName="cpf" type="text" id="cpf" mask="999.999.999-99" ></p-inputMask>
       </label>
       <label for="email">
         Email
@@ -45,11 +44,11 @@
     <div class="two-colums">
       <label for="weight">
         Peso
-        <input id="weight" type="text" formControlName="weight" pInputText />
+        <input id="weight" type="text" formControlName="weight" pInputText onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
       </label>
       <label for="height">
        Altura
-        <input id="height" type="text" formControlName="height" pInputText />
+        <input id="height" type="text" formControlName="height" pInputText onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
       </label>
     </div>
      <label style="width: '100%'">
