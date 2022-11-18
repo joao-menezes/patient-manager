@@ -1,0 +1,38 @@
+.container{
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Sans-serif;
+  a{
+    color: var(--surface-900);
+    text-decoration:none;
+    a:link{
+      color: var(--surface-900);
+    }
+    a:visited{
+      color: var(--surface-900);
+    }
+  }
+
+  .profile-images{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .yyyy{
+    display: flex;
+    align-items: center;
+  }
+
+  img{
+    width: 100px;
+    height: 100px;
+    border-radius:30px;
+  }
+}

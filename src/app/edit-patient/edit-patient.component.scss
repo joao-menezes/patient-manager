@@ -1,0 +1,46 @@
+label{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 15px;
+  padding:5px;
+}
+
+.two-colums{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.margin-bottom{
+  margin-bottom:15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.form-group{
+  display: flex;
+  padding: 5px;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  .one-column{
+    width: 100%;
+    display: flex;
+  }
+}
+
+.fc-button-group{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  p-button{
+    margin-left: 10px;
+  }
+}

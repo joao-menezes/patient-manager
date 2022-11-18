@@ -1,0 +1,89 @@
+<p-dialog [(visible)]="displayAdd"
+          [modal]="true"
+          [draggable]="false"
+          [closeOnEscape]="false"
+          [closable]="false"
+          header="Adicionar Paciente"
+          [style]="{margin: '16px'}">
+
+    <app-add-patient (display)="close()"></app-add-patient>
+</p-dialog>
+
+
+  <p-dialog [(visible)]="displayEdit"
+          [modal]="true"
+          [draggable]="false"
+          [closeOnEscape]="false"
+          [closable]="false"
+          appendTo="body"
+          header="Editar Paciente"
+          [style]="{margin: '16px'}">
+
+    <app-edit-patient [patient]="patient" (display)="close()"></app-edit-patient>
+</p-dialog>
+
+<main>
+  <div class="container">
+    <div class="box">
+      <div class="patients-table">
+        <div class="add-btn">
+          <button (click)="addClick()" label="Adicionar Paciente" pButton type="button" icon="pi pi-plus" class="p-button-rounded p-button-text p-button-success"></button>
+        </div>
+        <p-table #table [value]="PatientList"
+                 [rows]="10"
+                 [paginator]="true"
+                 [loading]="loading"
+                 [responsive]="true"
+                 [filterDelay]="0"
+                 [style]="{margin: '16px'}"
+                 [globalFilterFields]="['first_name','last_name','cpf','sex','blood_group']">
+                 <ng-template pTemplate="caption">
+                  <div class="table-header">
+                    <span class="p-input-icon-left">
+                      <i class="pi pi-search"></i>
+                      <input pInputText type="text" (input)="table.filterGlobal($any($event.target).value, 'contains')" placeholder="Procure pelo paciente" />
+                  </span>
+                  </div>
+                </ng-template>
+                <p>pinto</p>
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Nome</th>
+              <th>Cpf</th>
+              <th>Email</th>
+              <th>Data de Nascimento</th>
+              <th>Informacões Biologicas</th>
+              <th>Telefone</th>
+              <th>Options</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-patient>
+            <tr>
+              <td>{{patient.first_name}} {{patient.last_name}}</td>
+              <td>{{patient.cpf}}</td>
+              <td class="email">{{patient.email}}</td>
+              <td>{{patient.birth_date.substring(0, 10).replaceAll('-','/')}}</td>
+              <td>
+                Sexo <strong>{{patient.sex === 'M' ? 'Masculino' : 'Feminino'}}</strong>
+                <br>Tipo Sanguinêo <strong>{{patient.blood_group}}</strong>
+                <br>Peso <strong>{{patient.weight}}.0 Kg</strong>
+                <br> Altura <strong>{{patient.height}}.0 M</strong>
+              </td>
+              <td>{{patient.tel}} <br> <strong style="color:tomato">EMERGÊNCIA</strong><br>{{patient.emergency_tel}}</td>
+              <td >
+                <button pTooltip="Editar" pButton type="button" icon="pi pi-pencil" (click)="editPatient(patient)" class="p-button-rounded p-button-text"></button>
+                <button pTooltip="Deletar" pButton type="button" icon="pi pi-trash" (click)="deletePatient(patient.cpf)" class="p-button-rounded p-button-text p-button-danger"></button>
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="emptymessage" >
+            <div class="emptymessage">
+              Patients not exists here: &nbsp <em><p (click)="addClick()">Add New Patient</p></em>
+              <img src="https://thefilipinodoctor.com/_nuxt/368308de134430dcd503b65067b75a62.svg" alt="">
+            </div>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+</main>

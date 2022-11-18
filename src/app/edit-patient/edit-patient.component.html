@@ -1,0 +1,79 @@
+<form [formGroup]="patientFields" >
+  <div class="margin-bottom form-group">
+    <h2>{{windowName}}</h2>
+    <div class="two-colums">
+      <label for="name">
+        Nome
+        <input formControlName="first_name" type="text" id="name" pInputText>
+      </label>
+      <label for="last-name">
+        Sobrenome
+        <input formControlName="last_name" type="text" id="last-name" pInputText>
+      </label>
+    </div>
+
+    <div class="two-colums">
+      <label for="email">
+        Email
+        <input formControlName="email" type="email" id="email" pInputText >
+      </label>
+      <label >
+        Data de Nascimento
+        <p-calendar
+          [showIcon]="true"
+          formControlName="birth_date"
+          dateFormat="dd/mm/yy"
+          [tabindex]="5"
+          appendTo="body"
+          [style]="{width:'234px'}"
+          [(ngModel)]="selectedDate"></p-calendar>
+      </label>
+    </div>
+    <div class="one-column">
+      <div class="two-colums">
+        <label for="weight">
+          Peso
+          <input id="weight" type="text" formControlName="weight" pInputText />
+        </label>
+        <label>
+          Sexo
+          <p-radioButton formControlName="sex"  name="sex" label="Masculino" value="M" [(ngModel)]="selectedSex" ></p-radioButton>
+          <p-radioButton formControlName="sex" name="sex" label="Feminino" value="F" [(ngModel)]="selectedSex"></p-radioButton>
+        </label>
+      </div>
+    </div>
+    <div class="one-column">
+      <label for="height">
+        Altura
+        <input id="height" type="text" formControlName="height" pInputText />
+      </label>
+      <label >
+        Tipo Sanguineo
+        <p-dropdown
+          [style]="{'width':'100%'}"
+          formControlName="blood_group"
+          appendTo="body"
+          [options]="bloodType"
+          [(ngModel)]="selectedBloodType"
+          optionLabel="code"></p-dropdown>
+      </label>
+    </div>
+    <div class="two-colums">
+      <label >
+        Telefone
+        <p-inputMask minlength="11" formControlName="tel" mask="(99) 99999-9999" ></p-inputMask>
+      </label>
+      <label >
+        Telefone de Emergencia
+        <p-inputMask minlength="11" formControlName="emergency_tel" mask="(99) 99999-9999" ></p-inputMask>
+      </label>
+    </div>
+
+  </div>
+
+  <div class="fc-button-group">
+    <button pButton type="button" label="cancelar" icon="pi pi-times" (click)="close()" class="p-button-rounded p-button-text p-button-danger"></button>
+    <button pButton type="button" label="adicionar" icon="pi pi-plus" (click)="editPatient()" class="p-button-rounded p-button-text"></button>
+  </div>
+</form>
+<p-toast key="tl"></p-toast>

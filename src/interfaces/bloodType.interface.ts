@@ -1,0 +1,3 @@
+interface BloodTypeInterface {
+  code: string
+}

@@ -1,0 +1,113 @@
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  .main-color{
+    background-color:var(--teal-300) !important;
+    border:1px solid var(--teal-100);
+  }
+  .patients-table{
+    width: 100vw;
+    text-align: right;
+    transform: scale(0.9);
+    .email{
+      text-overflow: ellipsis;
+    }
+    th,td{
+      word-wrap:break-word;
+    }
+    .emptymessage{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      margin: 0 auto;
+      width: 100vw;
+      flex-wrap: wrap;
+      flex-direction: column;
+      em{
+        color: var(--blue-300);
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover{
+          color: var(--blue-500)
+        }
+      }
+    }
+
+    .action-buttons{
+      padding: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  .add-btn{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .margin-bottom{
+    margin-bottom: 5px;
+  }
+
+}
+
+:host ::ng-deep {
+  .p-datatable-responsive-demo .p-datatable-tbody > tr > td .p-column-title {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+
+  .patients-table{
+    width: 100vw !important;
+
+    .action-buttons{
+      align-content: flex-start !important;
+      flex-direction: row-reverse !important;
+      align-items: center !important;
+      border-bottom:1px solid var(--gray-500) !important;
+    }
+
+
+    .margin{
+      margin-bottom: 0px !important;
+      margin-left: 10px;
+    }
+  }
+  :host ::ng-deep {
+      .p-datatable {
+          &.p-datatable-responsive-demo {
+              .p-datatable-thead > tr > th,
+              .p-datatable-tfoot > tr > td {
+                  display: none !important;
+              }
+
+              .p-datatable-tbody > tr > td {
+                  text-align: left;
+                  display: block;
+                  float: left;
+                  clear: left;
+                  border: 0 none;
+
+                  .p-column-title {
+                      padding: .4rem;
+                      min-width: 30%;
+                      display: inline-block;
+                      margin: -.4em 1em -.4em -.4rem;
+                      font-weight: bold;
+                  }
+
+                  &:last-child {
+                      border-bottom: 1px solid var(--gray-500);
+                  }
+              }
+
+          }
+      }
+  }
+}
