@@ -12,7 +12,7 @@ export class AddPatientComponent implements OnInit {
 
   bloodType: BloodTypeInterface[];
   selectedSex: string;
-  selectedDate: string;
+  selectedDate: Date;
   selectedBloodType: BloodTypeInterface;
   @Output() display: EventEmitter<boolean> = new EventEmitter();
 
@@ -46,7 +46,7 @@ export class AddPatientComponent implements OnInit {
   ngOnInit(): void {}
 
   addPatient(){
-    this.patientFields.value.birth_date = new Date(this.patientFields.value.birth_date).toISOString();
+    // this.patientFields.value.birth_date = new Date(this.patientFields.value.birth_date).toISOString();
     this.patientFields.value.blood_group = this.patientFields.value.blood_group.code
     this.patientFields.value.cpf = this.patientFields.value.cpf.replaceAll('.','').replaceAll('-','')
 
@@ -64,6 +64,10 @@ export class AddPatientComponent implements OnInit {
 
   close(){
     this.display.emit(false)
+    this.patientFields.reset()
+  }
+
+  refreshForm(){
     this.patientFields.reset()
   }
 

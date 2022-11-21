@@ -22,7 +22,9 @@
         <p-calendar
           [showIcon]="true"
           formControlName="birth_date"
-          dateFormat="dd/mm/yy"
+          [yearNavigator]="true"
+          yearRange="2000:2030"
+          dateFormat="DD/MM/yyyy"
           [tabindex]="5"
           appendTo="body"
           [(ngModel)]="selectedDate"></p-calendar>
@@ -41,7 +43,7 @@
 
           <label>
             Sexo
-            <div class="two-colums" [style]="{'width':'234px'}">
+            <div class="two-colums" [style]="{'width':'234px','justify-content':'left'}">
               <p-radioButton formControlName="sex"  name="sex" label="Masculino" value="M" [(ngModel)]="selectedSex" ></p-radioButton>
               <p-radioButton formControlName="sex" name="sex" label="Feminino" value="F" [(ngModel)]="selectedSex"></p-radioButton>
             </div>
@@ -55,7 +57,7 @@
       </label>
       <label for="height">
         Altura
-        <p-inputMask type="text" mask="9.99" formControlName="height" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></p-inputMask>
+        <p-inputMask id="height" type="text" mask="9.99" formControlName="height" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></p-inputMask>
       </label>
 
     </div>

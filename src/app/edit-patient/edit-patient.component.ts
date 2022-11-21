@@ -34,17 +34,6 @@ export class EditPatientComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  get first_name(): any { return this.patientFields.get('first_name'); }
-  get last_name(): any { return this.patientFields.get('last_name'); }
-  get email(): any { return this.patientFields.get('email'); }
-  get birth_date(): any { return this.patientFields.get('birth_date'); }
-  get sex(): any { return this.patientFields.get('sex'); }
-  get tel(): any { return this.patientFields.get('tel'); }
-  get emergency_tel(): any { return this.patientFields.get('emergency_tel'); }
-  get blood_group(): any { return this.patientFields.get('blood_group'); }
-  get weight(): any { return this.patientFields.get('weight'); }
-  get height(): any { return this.patientFields.get('height'); }
-
   constructor(private service: SharedService,private messageService: MessageService) {
     this.bloodType = [
       { code:''   },
@@ -59,25 +48,6 @@ export class EditPatientComponent implements OnInit {
   }
 
   editPatient(){
-
-    // if(this.patientFields.value.birth_date === undefined){
-    //   this.patientFields.value.birth_date = null
-    // }else{
-    //   this.patientFields.value.birth_date = new Date(this.patientFields.value.birth_date).toISOString();
-    // }
-    //
-
-    //
-    // if(this.patientFields.value.email === ''){
-    //   this.patientFields.value.email = null
-    // }else{
-    //   this.patientFields.value.email;
-    // }
-
-    // if(this.patientFields.value === undefined || this.patientFields.value === null || this.patientFields.value === ''){
-    //   this.first_name.setValue(null);
-    // }
-
     for(let field in this.patientFields.value){
       if(this.patientFields.value[field] === null || this.patientFields.value[field] === undefined || this.patientFields.value[field] === ''){
         this.patientFields.value[field] = null

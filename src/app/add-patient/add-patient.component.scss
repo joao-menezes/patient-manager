@@ -14,14 +14,6 @@ label{
   justify-content: center;
 }
 
-.tree-columns{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
 .form-group{
   display: flex;
   padding: 5px;
@@ -30,11 +22,6 @@ label{
 
   .final-input{
     width: 100%;
-  }
-
-  .one-column{
-    width: 100%;
-    display: flex;
   }
 }
 
