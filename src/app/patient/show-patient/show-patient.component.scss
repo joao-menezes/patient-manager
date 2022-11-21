@@ -14,7 +14,7 @@
     align-items: center;
   }
   .patients-table{
-    box-shadow: 0px 0px 12px rgb(0 0 0 / 16%);
+    box-shadow: 0 0 12px rgb(0 0 0 / 16%);
     tr{transition:.25s}
     tr:hover{
       background-color: rgba(40, 167, 69, 0.37)
@@ -73,48 +73,39 @@
   }
 }
 
-@media screen and (max-width: 40rem) {
-  //.patients-table{
-  //  width: 100vw !important;
-  //  .margin{
-  //    margin-bottom: 0px !important;
-  //    margin-left: 10px;
-  //  }
-  //}
+@media screen and (max-width: 70rem) {
+  :host {
+    .p-datatable {
+      &.p-datatable-responsive-demo {
+        .p-datatable-thead > tr > th,
+        .p-datatable-tfoot > tr > td {
+          display: none !important;
+        }
 
-::ng-deep {
-      .p-datatable {
-          &.p-datatable-responsive-demo {
-              .p-datatable-thead > tr > th,
-              .p-datatable-tfoot > tr > td {
-                  display: none !important;
-              }
+        .p-datatable-tbody > tr > td {
+          text-align: left;
+          display: block;
+          width: 100%;
+          float: left;
+          clear: left;
+          border: 0 none;
 
-              .p-datatable-tbody > tr > td {
-                  text-align: left;
-                  display: block;
-                  float: left;
-                  clear: left;
-                  border: 0 none;
-
-                  .p-column-title {
-                      padding: .4rem;
-                      min-width: 30%;
-                      display: inline-block;
-                      margin: -.4em 1em -.4em -.4rem;
-                      font-weight: bold;
-                  }
-
-                  &:last-child {
-                      border-bottom: 1px solid var(--gray-500);
-                  }
-              }
-
+          .p-column-title {
+            padding: 0.4rem;
+            min-width: 30%;
+            display: inline-block;
+            margin: -0.4em 1em -0.4em -0.4rem;
+            font-weight: bold;
           }
+
+          &:last-child {
+            border-bottom: 1px solid var(--surface-d);
+          }
+        }
       }
+    }
   }
 }
-
 .toTop {
   position: fixed;
   bottom: 20px;

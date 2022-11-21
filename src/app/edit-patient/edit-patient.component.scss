@@ -61,3 +61,11 @@ input[type=number]{
 ::ng-deep p-calendar{
   width: 234px;
 }
+
+@media screen and (min-width: 561px){
+  ::ng-deep{
+    .blood_group{
+      width:234px
+    }
+  }
+}

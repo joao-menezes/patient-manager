@@ -64,16 +64,18 @@
         <p-inputMask minlength="11" formControlName="emergency_tel" mask="(99) 99999-9999" ></p-inputMask>
       </label>
     </div>
-    <label>
-      Tipo Sanguineo
-      <p-dropdown
-        [style]="{'width':'100%'}"
-        formControlName="blood_group"
-        appendTo="body"
-        [options]="bloodType"
-        [(ngModel)]="selectedBloodType"
-        optionLabel="code"></p-dropdown>
-    </label>
+    <div class="one-column">
+      <label>
+        Tipo Sanguineo
+        <p-dropdown
+          [style]="{'width':'100%'}"
+          formControlName="blood_group"
+          appendTo="body"
+          [options]="bloodType"
+          [(ngModel)]="selectedBloodType"
+          optionLabel="code"></p-dropdown>
+      </label>
+    </div>
   </div>
 
   <div class="fc-button-group">

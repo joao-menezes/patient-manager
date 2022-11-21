@@ -1,6 +1,5 @@
 <form [formGroup]="patientFields" >
   <div class="margin-bottom form-group">
-    <h2>{{windowName}}</h2>
     <div class="two-columns">
       <label for="name">
         Nome
@@ -34,6 +33,7 @@
         <label >
           Tipo Sanguineo
           <p-dropdown
+            class="blood_group"
             [style]="{'width':'234px'}"
             formControlName="blood_group"
             [options]="bloodType"

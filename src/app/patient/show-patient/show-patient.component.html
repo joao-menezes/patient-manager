@@ -27,7 +27,7 @@
       <div class="patients-table">
         <p-table #table [value]="PatientList"
                  [rows]="10"
-                 selectionMode="single"
+                 responsiveLayout="stack"
                  [paginator]="true"
                  [rowsPerPageOptions]="[10,25,50]"
                  [showCurrentPageReport]="true"
@@ -56,7 +56,7 @@
               <th>Options</th>
             </tr>
           </ng-template>
-          <ng-template pTemplate="body" let-patient>
+          <ng-template pTemplate="body" let-patient let-columns="columns">
             <tr>
               <td>{{patient.first_name}} {{patient.last_name}}</td>
               <td>{{patient.cpf}}</td>
@@ -71,10 +71,11 @@
               <td>{{patient.tel}} <br> <strong style="color:tomato">EMERGÊNCIA</strong><br>{{patient.emergency_tel}}</td>
               <td >
                 <button pTooltip="Editar" pButton type="button" icon="pi pi-pencil" (click)="editPatient(patient)" class="p-button-rounded p-button-text"></button>
-                <button pTooltip="Deletar" pButton type="button" icon="pi pi-trash" (click)="deletePatient(patient.cpf)" class="p-button-rounded p-button-text p-button-danger"></button>
+                <button pTooltip="Deletar" pButton type="button" icon="pi pi-trash" (click)="deletePatient($event,patient.cpf)" class="p-button-rounded p-button-text p-button-danger"></button>
               </td>
             </tr>
           </ng-template>
+          <p-confirmPopup></p-confirmPopup>
           <ng-template pTemplate="emptymessage" >
             <div class="emptymessage">
               Não possui Pacientes aqui: <em><p (click)="addClick()">Adicionar Paciente</p></em>

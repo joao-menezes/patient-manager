@@ -50,3 +50,22 @@ input[type=number]{
   width: 234px;
 }
 
+@media screen and (max-width: 561px){
+
+  .one-column{
+    display: flex;
+    justify-content: center;
+  }
+  ::ng-deep{
+    .p-dropdown{
+      width:234px !important;
+    }
+  }
+
+  .fc-button-group{
+    display: grid !important;
+    align-items: center !important;
+    width:100% !important;
+  }
+
+}

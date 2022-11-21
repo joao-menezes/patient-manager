@@ -17,7 +17,6 @@ export class EditPatientComponent implements OnInit {
   selectedDate: string;
   selectedBloodType: BloodTypeInterface;
   PatientList: any = [];
-  windowName: string = ''
 
   patientFields = new FormGroup({
     first_name: new FormControl(''),
@@ -32,7 +31,9 @@ export class EditPatientComponent implements OnInit {
     height: new FormControl(),
   });
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.patient)
+  }
 
   constructor(private service: SharedService,private messageService: MessageService) {
     this.bloodType = [
@@ -69,7 +70,6 @@ export class EditPatientComponent implements OnInit {
       })
     }catch (err) {
       this.showError()
-      console.log("Erro: ",err,'\n','Valores: ',this.patientFields.value)
     }
 
   }

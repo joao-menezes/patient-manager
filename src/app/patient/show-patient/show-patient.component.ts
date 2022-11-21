@@ -1,16 +1,17 @@
 import {Component, OnInit} from '@angular/core';
 import {SharedService} from "../../shared.service";
-import {MessageService} from "primeng/api";
+import {ConfirmationService, MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-show-patient',
   templateUrl: './show-patient.component.html',
-  styleUrls: ['./show-patient.component.scss']
+  styleUrls: ['./show-patient.component.scss'],
+  providers: [ConfirmationService, MessageService]
 })
 
 export class ShowPatientComponent implements OnInit {
 
-  constructor(private service:SharedService, private messageService: MessageService) { }
+  constructor(private service:SharedService, private messageService: MessageService,private confirmationService: ConfirmationService) { }
 
   displayAdd: boolean = false;
   displayEdit: boolean = false;
@@ -51,19 +52,26 @@ export class ShowPatientComponent implements OnInit {
     this.patient = edit;
   }
 
-  deletePatient(del: any){
-    del = del.replaceAll('.','').replaceAll('-','');
-    try {
-      if(confirm('Você tem certeza que deseja deletar ? ')){
-        this.service.deletePatientList(del).subscribe(() => {
-          this.refreshPatientList();
-          this.showSuccess();
-        })
-      }
+  deletePatient(event: any, cpf:any){
+    this.confirmationService.confirm({
+      target: event.target,
+      message: 'Are you sure that you want to proceed?',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        try {
+          this.service.deletePatientList(cpf.replaceAll('.','').replaceAll('-','')).subscribe(() => {
+            this.refreshPatientList();
+            this.showSuccess();
+          })
 
-    }catch(err){
-      this.showError();
-    }
+        }catch(err){
+          this.showError();
+        }
+      },
+      reject: () => {
+        this.showError();
+      }
+    });
   }
 
   showSuccess() {

@@ -27,10 +27,11 @@ import {HomeComponent} from './home/home.component';
 import {AccordionModule} from 'primeng/accordion';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {DropdownModule} from "primeng/dropdown";
-import { EditPatientComponent } from './edit-patient/edit-patient.component';
+import {EditPatientComponent} from './edit-patient/edit-patient.component';
 import {TooltipModule} from "primeng/tooltip";
 import {RippleModule} from "primeng/ripple";
 import {ProgressSpinnerModule} from "primeng/progressspinner";
+import {ConfirmPopupModule} from 'primeng/confirmpopup';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {ProgressSpinnerModule} from "primeng/progressspinner";
     DropdownModule,
     TooltipModule,
     RippleModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    ConfirmPopupModule,
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
