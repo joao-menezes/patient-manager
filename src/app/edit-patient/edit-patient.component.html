@@ -21,10 +21,10 @@
         Data de Nascimento
         <p-calendar
           [showIcon]="true"
-          formControlName="birth_date"
           [yearNavigator]="true"
+          formControlName="birth_date"
           yearRange="2000:2030"
-          dateFormat="DD/MM/yyyy"
+          dateFormat="dd/mm/yy"
           [tabindex]="5"
           appendTo="body"
           [(ngModel)]="selectedDate"></p-calendar>

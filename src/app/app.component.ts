@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {MessageService} from "primeng/api";
 
 @Component({
@@ -7,6 +7,4 @@ import {MessageService} from "primeng/api";
   styleUrls: ['./app.component.scss'],
   providers: [MessageService]
 })
-export class AppComponent {
-  title = 'patient-system';
-}
+export class AppComponent {}

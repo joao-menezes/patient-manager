@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 import {SharedService} from "../shared.service";
 import {MessageService} from "primeng/api";
 
@@ -61,7 +61,7 @@ export class EditPatientComponent implements OnInit {
     }
 
     try {
-      this.service.updatePatientsList(this.patientFields.value,this.patient.cpf).subscribe(res => {
+      this.service.updatePatientsList(this.patientFields.value,this.patient.cpf).subscribe(() => {
         this.showSuccess();
         this.refreshPatientList();
         this.display.emit(false);

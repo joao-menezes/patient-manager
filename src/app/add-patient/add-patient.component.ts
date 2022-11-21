@@ -46,16 +46,14 @@ export class AddPatientComponent implements OnInit {
   ngOnInit(): void {}
 
   addPatient(){
+    console.log(this.selectedDate)
     // this.patientFields.value.birth_date = new Date(this.patientFields.value.birth_date).toISOString();
-    this.patientFields.value.blood_group = this.patientFields.value.blood_group.code
-    this.patientFields.value.cpf = this.patientFields.value.cpf.replaceAll('.','').replaceAll('-','')
-
       try {
-
-        this.service.addPatientsList(this.patientFields.value).subscribe(res => {
+        this.patientFields.value.blood_group = this.patientFields.value.blood_group.code
+        this.patientFields.value.cpf = this.patientFields.value.cpf.replaceAll('.','').replaceAll('-','')
+        this.service.addPatientsList(this.patientFields.value).subscribe(() => {
           this.showSuccess()
           this.patientFields.reset()
-
         })
       }catch (err) {
         this.showError()

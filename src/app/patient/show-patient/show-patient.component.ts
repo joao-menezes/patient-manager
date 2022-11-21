@@ -1,4 +1,4 @@
-import {Component, Injectable, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SharedService} from "../../shared.service";
 import {MessageService} from "primeng/api";
 
@@ -17,13 +17,26 @@ export class ShowPatientComponent implements OnInit {
   patient: any;
   PatientList: any = [];
   loading: boolean = true;
+  isTopButtonVisible:boolean = false;
 
   addClick(){
     this.displayAdd = true;
   }
 
   ngOnInit(): void {
+    window.onscroll = () => {
+      this.scrollFunction()
+    }
     this.refreshPatientList();
+  }
+
+  scrollFunction(){
+      this.isTopButtonVisible = document.body.scrollTop > 20 || document.documentElement.scrollTop > 20;
+  }
+
+  topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 
   close(){
@@ -42,7 +55,7 @@ export class ShowPatientComponent implements OnInit {
     del = del.replaceAll('.','').replaceAll('-','');
     try {
       if(confirm('Você tem certeza que deseja deletar ? ')){
-        this.service.deletePatientList(del).subscribe(data => {
+        this.service.deletePatientList(del).subscribe(() => {
           this.refreshPatientList();
           this.showSuccess();
         })
@@ -72,7 +85,4 @@ export class ShowPatientComponent implements OnInit {
       }
     })
   }
-
-
-
 }
