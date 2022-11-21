@@ -1,7 +1,7 @@
 <form [formGroup]="patientFields" >
   <div class="margin-bottom form-group">
     <h2>{{windowName}}</h2>
-    <div class="two-colums">
+    <div class="two-columns">
       <label for="name">
         Nome
         <input formControlName="first_name" type="text" id="name" pInputText>
@@ -12,7 +12,7 @@
       </label>
     </div>
 
-    <div class="two-colums">
+    <div class="two-columns">
       <label for="email">
         Email
         <input formControlName="email" type="email" id="email" pInputText >
@@ -30,7 +30,7 @@
           [(ngModel)]="selectedDate"></p-calendar>
       </label>
     </div>
-      <div class="two-colums">
+      <div class="two-columns">
         <label >
           Tipo Sanguineo
           <p-dropdown
@@ -43,25 +43,25 @@
 
           <label>
             Sexo
-            <div class="two-colums" [style]="{'width':'234px','justify-content':'left'}">
+            <div class="two-columns" [style]="{'width':'234px','justify-content':'left'}">
               <p-radioButton formControlName="sex"  name="sex" label="Masculino" value="M" [(ngModel)]="selectedSex" ></p-radioButton>
               <p-radioButton formControlName="sex" name="sex" label="Feminino" value="F" [(ngModel)]="selectedSex"></p-radioButton>
             </div>
           </label>
 
     </div>
-    <div class="two-colums">
+    <div class="two-columns">
       <label for="weight">
         Peso
-        <input id="weight" type="text" formControlName="weight" pInputText onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+        <input id="weight" type="number" formControlName="weight" pInputText />
       </label>
       <label for="height">
         Altura
-        <p-inputMask id="height" type="text" mask="9.99" formControlName="height" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></p-inputMask>
+        <input id="height" type="number" formControlName="height" pInputText />
       </label>
 
     </div>
-    <div class="two-colums">
+    <div class="two-columns">
       <label >
         Telefone
         <p-inputMask minlength="11" formControlName="tel" mask="(99) 99999-9999" ></p-inputMask>

@@ -6,7 +6,7 @@ label{
   padding:5px;
 }
 
-.two-colums{
+.two-columns{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -16,6 +16,15 @@ label{
     display: flex;
     width:50%;
   }
+}
+
+input[type=number]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+}
+
+input[type=number]{
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .margin-bottom{
