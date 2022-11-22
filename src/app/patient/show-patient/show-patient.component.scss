@@ -74,6 +74,11 @@
 }
 
 @media screen and (max-width: 70rem) {
+  ::ng-deep{
+    .p-datatable .p-datatable-header{
+      padding:3rem 1rem 1rem;
+    }
+  }
   :host {
     .p-datatable {
       &.p-datatable-responsive-demo {
