@@ -58,28 +58,29 @@ export class ShowPatientComponent implements OnInit {
       message: 'Are you sure that you want to proceed?',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        try {
           this.service.deletePatientList(cpf.replaceAll('.','').replaceAll('-','')).subscribe(() => {
             this.refreshPatientList();
             this.showSuccess();
+          },err => {
+            this.showError()
           })
-
-        }catch(err){
-          this.showError();
-        }
       },
       reject: () => {
-        this.showError();
+        this.showInfo();
       }
     });
   }
 
   showSuccess() {
-    this.messageService.add({severity:'success', summary: 'Success', detail: 'Deletado com sucesso'});
+    this.messageService.add({severity:'success', summary: 'Successo', detail: 'Deletado com sucesso'});
   }
 
   showError() {
-    this.messageService.add({severity:'error', summary: 'error', detail: 'Erro ao Deletar'});
+    this.messageService.add({severity:'error', summary: 'erro', detail: 'Erro ao Deletar'});
+  }
+
+  showInfo(){
+    this.messageService.add({severity:'info', summary: 'Ação', detail: 'Operação Cancelada'});
   }
 
   refreshPatientList(){

@@ -63,7 +63,7 @@ input[type=number]{
   }
 
   .fc-button-group{
-    display: grid !important;
+    justify-content: center;
     align-items: center !important;
     width:100% !important;
   }

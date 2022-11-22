@@ -48,16 +48,15 @@ export class AddPatientComponent implements OnInit {
   addPatient(){
     console.log(this.selectedDate)
     // this.patientFields.value.birth_date = new Date(this.patientFields.value.birth_date).toISOString();
-      try {
+
         this.patientFields.value.blood_group = this.patientFields.value.blood_group.code
         this.patientFields.value.cpf = this.patientFields.value.cpf.replaceAll('.','').replaceAll('-','')
         this.service.addPatientsList(this.patientFields.value).subscribe(() => {
           this.showSuccess()
           this.patientFields.reset()
+        },err => {
+          this.showError()
         })
-      }catch (err) {
-        this.showError()
-      }
   }
 
   close(){
@@ -74,7 +73,7 @@ export class AddPatientComponent implements OnInit {
   }
 
   showError() {
-    this.messageService.add({severity:'error', summary: 'error', detail: 'Erro ao cadastrar verifique os campos'});
+    this.messageService.add({severity:'error', summary: 'error', detail: 'Erro ao cadastrar'});
   }
 
   validateForm(): boolean{

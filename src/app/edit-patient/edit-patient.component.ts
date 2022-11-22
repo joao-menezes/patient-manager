@@ -50,9 +50,9 @@ export class EditPatientComponent implements OnInit {
 
   editPatient(){
     for(let field in this.patientFields.value){
-      if(this.patientFields.value[field] === null || this.patientFields.value[field] === undefined || this.patientFields.value[field] === ''){
-        this.patientFields.value[field] = null
-      }
+     if(this.patientFields.value[field] === null || this.patientFields.value[field] === undefined || this.patientFields.value[field] === ''){
+            this.patientFields.value[field] = null
+          }
     }
 
     if(this.patientFields.value.blood_group === undefined || this.patientFields.value.blood_group === null){
@@ -61,17 +61,13 @@ export class EditPatientComponent implements OnInit {
       this.patientFields.value.blood_group = this.selectedBloodType.code;
     }
 
-    try {
       this.service.updatePatientsList(this.patientFields.value,this.patient.cpf).subscribe(() => {
         this.showSuccess();
         this.refreshPatientList();
-        this.display.emit(false);
         this.patientFields.reset();
+      },err => {
+        this.showError();
       })
-    }catch (err) {
-      this.showError()
-    }
-
   }
 
   close(){
