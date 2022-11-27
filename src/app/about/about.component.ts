@@ -16,8 +16,8 @@ export class AboutComponent implements OnInit {
   joaoName:string = "Joao Menezes"
   rianProfileImage:string = "https://avatars.githubusercontent.com/u/88293711?v=4";
   rianName:string = "Rian Gabriel"
-  caiqueProfileImage:string = "https://teams.microsoft.com/api/mt/part/amer-03/beta/users/8:orgid:1bc57975-1f5e-48f3-8251-f0ae83539f9f/profilepicturev2?displayname=CAIQUE%20GOMES%20BETTI&size=HR96x96";
-  caiqueName:string = "Caique!"
+  caiqueProfileImage:string = "https://avatars.githubusercontent.com/u/106355258?v=4";
+  caiqueName:string = "Caique Gomes"
 
   loadAllProfile(){
     this.profileCard = [
@@ -47,7 +47,7 @@ export class AboutComponent implements OnInit {
     return [{
       image: this.caiqueProfileImage,
       name: this.caiqueName,
-      linkGit: ''
+      linkGit: 'https://github.com/caiquegomes'
     }]
   }
 

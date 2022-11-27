@@ -6,7 +6,8 @@ import { Observable } from "rxjs";
   providedIn: 'root'
 })
 export class SharedService{
-  readonly APIUrl = 'https://patient-manager-wyden.herokuapp.com';
+  // readonly APIUrl = 'https://patient-manager-wyden.herokuapp.com';
+  readonly APIUrl = 'https://patient-manager-wyden.up.railway.app';
 
   constructor(private http:HttpClient){}
 

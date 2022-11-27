@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
     this.items = [
       {
         label:'Home',
-        routerLink:'/'
+        url:'https://caiquegomes.github.io/patient-manager-landingpage/'
       },
       {
         label: 'Listagem',
