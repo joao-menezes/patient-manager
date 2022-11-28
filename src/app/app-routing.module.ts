@@ -6,11 +6,11 @@ import {NotFoundErrorComponent} from './not-found-error/not-found-error.componen
 import {PatientComponent} from './patient/patient.component';
 
 const routes: Routes = [
-  //{
+  // {
   //  path: '',
   //  pathMatch: 'full',
   //  component: HomeComponent,
-  //},
+  // },
   {
     path: 'show-patient',
     pathMatch: 'full',

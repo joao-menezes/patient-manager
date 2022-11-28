@@ -31,7 +31,7 @@ export class AboutComponent implements OnInit {
     return [{
       image: this.joaoProfileImage,
       name: this.joaoName,
-      linkGit: 'https://github.com/joao-menezes'
+      linkGit: 'https://github.com/joao-menezes',
     }]
   }
 
@@ -39,7 +39,7 @@ export class AboutComponent implements OnInit {
     return [{
       image: this.rianProfileImage,
       name: this.rianName,
-      linkGit: 'https://github.com/rianito'
+      linkGit: 'https://github.com/rianito',
     }]
   }
 
@@ -47,7 +47,7 @@ export class AboutComponent implements OnInit {
     return [{
       image: this.caiqueProfileImage,
       name: this.caiqueName,
-      linkGit: 'https://github.com/caiquegomes'
+      linkGit: 'https://github.com/caiquegomes',
     }]
   }
 

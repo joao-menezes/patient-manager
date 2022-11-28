@@ -3,7 +3,8 @@
       <div class="profile-images" >
         <a style="margin: 15px;" *ngFor="let card of profileCard"  href="{{card.linkGit}}" target="_blank">
           <img src="{{card.image}}">
-          <p ><strong>{{card.name}}</strong></p>
+          <p><em>{{card.name}}</em></p>
+          <p> RA<strong>{{card.ra}}</strong></p>
         </a>
       </div>
       <div class="yyyy">@{{yyyy}}</div>

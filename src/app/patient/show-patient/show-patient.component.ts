@@ -55,7 +55,7 @@ export class ShowPatientComponent implements OnInit {
   deletePatient(event: any, cpf:any){
     this.confirmationService.confirm({
       target: event.target,
-      message: 'Are you sure that you want to proceed?',
+      message: 'Tem certeza que deseja continuar?',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
           this.service.deletePatientList(cpf.replaceAll('.','').replaceAll('-','')).subscribe(() => {

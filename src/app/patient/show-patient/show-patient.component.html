@@ -39,10 +39,10 @@
                   <div class="table-header">
                     <span class="p-input-icon-left">
                       <i class="pi pi-search"></i>
-                      <input pInputText type="text" (input)="table.filterGlobal($any($event.target).value, 'contains')" placeholder="Procure pelo paciente" />
+                      <input class="search-input" pInputText type="text" (input)="table.filterGlobal($any($event.target).value, 'contains')" placeholder="Procure pelo paciente" />
                   </span>
                     <div class="add-btn">
-                      <button (click)="addClick()" label="Adicionar Paciente" pButton type="button" icon="pi pi-plus" class="p-button-success"></button>
+                      <button (click)="addClick()" label="Adicionar Paciente" pButton type="button" icon="pi pi-plus" class="add-button p-button-primary"></button>
                     </div>
                   </div>
                 </ng-template>
@@ -93,5 +93,5 @@
         </p-table>
       </div>
   </div>
-  <button pButton type="button" icon="pi pi-arrow-up" *ngIf="isTopButtonVisible" (click)="topFunction()" class="toTop p-button-rounded p-button-success"></button>
+  <button pButton type="button" icon="pi pi-arrow-up" *ngIf="isTopButtonVisible" (click)="topFunction()" class="toTop p-button-rounded p-button-secondary"></button>
 </main>

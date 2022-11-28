@@ -5,6 +5,17 @@
     background-color:var(--teal-300) !important;
     border:1px solid var(--teal-100);
   }
+  .search-input{
+    border-radius: 30px;
+  }
+  .add-button{
+    transition: .25s;
+    border-radius: 30px;
+  }
+  .add-button:hover{
+    transform: translateY(-0.15rem);
+    box-shadow: 0rem 0.25rem 0.75rem rgb(30 34 40 / 15%);
+  }
   .table-header{
     height:60px;
     display: flex;
@@ -17,7 +28,7 @@
     box-shadow: 0 0 12px rgb(0 0 0 / 16%);
     tr{transition:.25s}
     tr:hover{
-      background-color: rgba(40, 167, 69, 0.37)
+      background-color: #3f77e062;
     }
 
     th,td{
